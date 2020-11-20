@@ -1,0 +1,199 @@
+.banner{
+    background-image: url("./../../../img/img_product_detail/bg_banner.jpg");
+    position: relative;
+    &__product{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,0);
+        // height: 100%;
+        img{
+            width: 100%;
+            max-width: 1050px;
+            transform: translate(0,20%);
+        }
+    }
+}
+@mixin label($color, $size-btn, $color-mask) {
+    
+        cursor: pointer;
+        display: block;
+        width: $size-btn;
+        height:  $size-btn;
+        position: relative;
+        background-color: $color;
+        input{
+            display: none;
+            z-index: 1;
+            width: $size-btn;
+            height:  $size-btn;
+            &:checked ~ {
+                span.mask{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: $size-btn;
+                    width: $size-btn;
+                    display: block;
+                    border: 3px solid $color-mask;
+                }
+            }
+        }
+}
+.information{
+    display: flex;
+    justify-content: center;
+    .container{
+        @include midflexCol();
+        gap: 35px;
+    }
+    &__color{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        $size-btn: 32px;
+        $color-mask:  rgb(187, 173, 49);
+        .label{
+            &--red{
+                @include label(red, $size-btn, $color-mask);
+            }
+            &--green{
+                @include label(green, $size-btn, $color-mask);
+            }
+            &--black{
+                @include label(black, $size-btn, $color-mask);
+            }
+        }
+    }
+    &__intro{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        position: relative;
+       
+        &-name{
+            
+            font-size: 54px;
+            line-height: 60px;
+        }
+        &-des{
+            text-align: center;
+            font-size: 34px;
+            line-height: 34px;
+        }
+    }
+    &__text{
+        @include midflexCol();
+        gap:20px;
+        position: relative;
+        &::after{
+            content: "";
+            height: 1.5px;  
+            width: 40px;
+            background-color: black;
+            position: absolute;
+            bottom: -20px;
+
+        }
+        &-des{
+            text-align: center;
+            font-size: 18px;
+            line-height:22px;
+
+            max-width: 650px;
+        }
+    }
+    &__price{
+        @include midflexCol();
+        &-text{
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            @include text(20px, DINEngAlt, 20px, black,  none);
+        }
+        &-number{
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            @include text(40px, DINEngAlt, 40px, black,  none);
+        }
+    }
+    &__technical{
+        &-text{
+            & > .title{
+                margin: 0 0 30px 0;
+            }
+            .accordian{
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 20px;
+                &__tab{
+                    &.--show{
+                        .accordian__tab-body{
+                            overflow: unset;
+                            height: max-content;
+                            margin: 20px 0;
+                            transition: 0.3s;
+                        }
+                        .accordian__tab-header .icon::before{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            background-color: black;
+                            transition: 0.3s;
+                        }
+                        transition: 0.3s;
+                    }
+                    &-header{
+                        display: flex;
+                        align-items: flex-end;
+                        gap: 10px;
+                        .title{
+                            font-size: 24px;
+                            line-height: 24px;
+                        }
+                        .line{
+                            flex: auto;
+                            height: 2px;
+                            background-color: black;
+                        }
+                        .icon{
+                            width: 16px;
+                            height: 3px;
+                            background-color: black;
+                            position: relative;
+                        }
+                    }
+                    &-body{
+                        height: 0;
+                        overflow: hidden;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        gap: 10px;
+                        transition: 0.3s;
+                        .ingredients{
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                    .accordian__tab-header .icon::before{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(90deg);
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        transition: 0.3s;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,174 @@
+// header .logo{
+// 	width: 90px;
+// 	height: 50px;
+//     // @include desktop {
+        
+//     // }
+//     // @include tablet {
+        
+//     // }
+//     // @include mobile {
+        
+//     // }
+//     // @include mobile-xxs {
+        
+//     // }
+// }
+
+header{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	height: 100px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.048);
+	.header__container{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 50px;
+		.brand{
+			@include midflex();
+		}
+		nav{
+			@include mid();
+			@include midflex();
+			ul{
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				li{
+					a{
+						@include text(14px, "UTMAvo", 14px, white, none);
+					}
+				}
+			}
+		}
+		.action{
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			&__search{
+				width:  20px;
+				height: 20px;
+			}
+			&__btn{
+				background-color: red;
+				color: white;
+				font-size: 0.8rem;
+				border-radius: 5px;
+				@include midflex();
+				padding: 5px 15px;
+			}
+		}
+		.nav__toggle{
+			display: none;
+			flex-flow: column nowrap;
+			gap: 4px;
+			align-items: flex-end;
+			height: fit-content;
+			cursor: pointer;
+			&-close{
+				display: none;
+				padding: 2px;
+				width: 20px;
+				height: 20px;
+				svg{
+					fill: white;
+				}
+			}
+			&-icon1{
+				width: 16px;
+				height: 3px;
+				background-color: white;	
+			}
+			&-icon2{
+				background-color: white;
+				width: 13px;
+				height: 3px;
+			}
+			&-icon3{
+				background-color: white;
+				width: 20px;
+				height: 3px;
+			}
+		}
+	
+	}
+	@include tablet{
+		height: 60px;
+		.header__container{
+			.brand{
+				width: 130px;
+			}
+			.action{
+				display: none;
+			}
+		}	
+	}
+	@include mobile{
+		$header-height: 80px;
+		height: $header-height;
+		
+		.header__container{
+			padding: 0 20px;
+			.brand{
+				width: 150px;
+				position: absolute;
+				z-index: 11;
+			}
+			nav{
+
+				left: 0;
+				top: 0;
+				transform: unset;
+				z-index: 10;
+			
+				background-color: black;
+				width: 100%;
+				height: 0;
+				overflow: hidden;
+				transition: 0.3s;
+				transition-timing-function: ease-out;
+				&.--show{
+					height: 100vh;
+					transition: 0.3s;
+					transition-timing-function: ease-out;
+				}
+				@include midflexCol();
+				justify-content: center;
+				ul{
+					flex-flow: column;
+					gap: 50px;
+					width: 100%;
+					li{
+						a{
+							font-size: 20px;
+							line-height: 20px;
+						}
+					}
+				}
+			}
+			.nav__toggle{
+				display: flex;
+				z-index: 11;
+				&.--show{
+					border: 2px solid white;
+					position: relative;
+					.nav__toggle-icon2, .nav__toggle-icon1, .nav__toggle-icon3{
+						display: none;
+					}
+					.nav__toggle-close{
+						display: block;
+					}
+				}
+				
+			}
+		}
+	}
+
+}

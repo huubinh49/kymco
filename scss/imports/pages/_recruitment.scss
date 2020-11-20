@@ -1,0 +1,208 @@
+.banner.--recruitment{
+    background-image: url("./../../../img/img_recruitment/banner.jpg");
+    height: 650px;
+}
+
+.profit{
+    .container{
+        @include midflexCol();
+        gap: 80px;
+    }
+    &__working{
+        &-text{
+            display: flex;
+            align-items: center;
+            .title{
+                font-size: 28px;
+                line-height: 28px;
+                margin: 0 0 20px 0;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 80px;
+                    height: 3px;
+                    background-color: #000000;
+                    transform: translate(calc(-50% - 20px), -10px);
+                }
+               
+            }
+            .description{
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+        &-img{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__env{
+        &-text{
+            .text{
+                display: flex;
+                flex-flow: column;
+                gap: 15px;
+                & > .title{
+                    position: relative;
+                    &::before{
+                        position: absolute;
+                        top: -40px;
+                        left: 0;
+                        content: "";
+                        width: 60px;
+                        height: 3px;
+                        background-color: #000000;
+                    }
+                    font-size: 32px;
+                    line-height: 36px;
+                }
+                &__block{
+                    .title{
+                        margin: 0 0 15px 0;
+                        font-size: 24px;
+                        line-height: 24px;
+                    }
+                    .description{
+                        font-size: 18px;
+                line-height: 24px;
+                    }
+                }
+            }
+        }
+        &-img{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @include mobile{
+        &__working, &__env{
+            gap: 30px;
+        }
+    }
+}
+
+.recruitment{
+    &__banner{
+        width: 100vw;
+        background-image: url("./../../../img/img_recruitment/Untitled-2.jpg");
+        height: 50%;
+        z-index: 0;
+        position: absolute;
+        bottom: 0;
+    }
+    position: relative;
+    .container{
+        position: absolute;
+        z-index: 1;
+        @include midflexCol();
+        gap: 50px;
+        padding: 20px 0;
+        top:  0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    &__title{
+        text-align: center;
+
+        font-size: 32px;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            height: 3px;
+            width: 40px;
+
+            background-color: #000000;
+        }
+    }
+    &__slot{
+        
+        .col-md-4{
+            display: flex;
+            justify-content: center;
+        }
+        &-card{
+            max-width: 350px;
+            padding: 30px 15px;
+            border-bottom: 10px solid red;
+            background-color: whitesmoke;
+            @include midflexCol();
+            gap: 50px;
+            .card__header{
+                @include midflexCol();
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    
+                    height: 3px;
+                    width: 40px;
+        
+                    background-color: #000000;
+                }
+                &-name{
+                    text-align: center;
+                    color: red;
+                    font-size: 28px;
+                }
+                &-time{
+                    text-align: center;
+                    font-size: 24px;
+                }
+            }
+            .card__body{
+                &-des{
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+            .card__apply{
+                font-size: 16px;
+                line-height: 16px;
+                text-decoration: underline;
+                color: red;
+            }
+        }
+    }
+    &__pagination{
+        .pagination{
+            .btn-text{
+                background-color: white;
+                &:hover, &.--active{
+                    background-color: red;
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        &__banner{
+            display: none;
+        }
+        &__slot{
+            gap: 20px;
+        }
+    }
+}

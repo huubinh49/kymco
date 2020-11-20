@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'UTMAvo';
+    src: url('./../fonts/UTMAvo.woff2') format('woff2'),
+        url('./../fonts/UTMAvo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DINEngAlt';
+    src: url('./../fonts/SFUDINEngAlt.woff2') format('woff2'),
+        url('./../fonts/SFUDINEngAlt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SvnAvoBold';
+    src: url('./../fonts/UTMAvoBold.woff2') format('woff2'),
+        url('./../fonts/UTMAvoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFUDIN';
+    src: url('./../fonts/SFUDINLight.woff2') format('woff2'),
+        url('./../fonts/SFUDINLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

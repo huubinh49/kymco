@@ -1,0 +1,135 @@
+.--network{
+    gap: 40px;
+    .banner{
+        background-image: url("./../../../img/img_network/banner.jpg");
+    }
+    
+    .network__title{
+        @include midflexCol();
+        .title{
+            text-align: center;
+        }
+    }
+    .network__note{
+        margin: 0 0 40px 0;
+        .container{
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 10px;
+        }
+        &-icon{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            i{
+                width: 30px;
+            }
+        }
+    }
+    #network{
+        position: relative;
+        .network__map{
+            .content{
+                width: fit-content;
+                &--show{
+                    opacity: 1;
+                }
+                .head{
+                    display: none;
+                }
+                &.--black{
+                    .body{
+                        background-color: black;
+                    }    
+                    &::after{
+                        border-top: 8px solid black;
+                    }
+                }
+                .body{
+                    padding: 10px;
+                    background-color: red;
+
+                    .title{
+                        color: white;
+                        line-height: 26px;
+                        font-size: 24px;
+                    }
+                }
+
+                transform: translate(calc(-50% + 8px), calc(-50% - 10px));
+                height: fit-content !important;
+                transition: 0.3s !important;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    width: 0; 
+                    height: 0; 
+                    border-radius: 0;
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;               
+                    border-top: 8px solid rgb(255, 0, 0);
+                    
+                    
+                }
+                @include tablet{
+                    .body{
+                        padding: 10px;
+                        .title{
+                           
+                            line-height: 24px;
+                            font-size: 22px;
+                        }
+                    }
+                }
+                @include tablet{
+                    .body{
+                        padding: 5px 10px;
+                        .title{
+                           
+                            line-height: 24px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .item-point.square{
+                @include midflex();
+                width: 40px;
+                background: unset;
+                border: unset;
+                border-radius: 0;
+                box-shadow: none;
+                a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                    transform: scale(1);
+                }
+                @include tablet{
+                    width: 30px;
+                }
+                @include mobile{
+                    width: 20px;
+                }
+            }
+            
+        }
+        .network__img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 40%;
+            height: 100%;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                margin: 0;
+            }
+        }
+    }
+}
