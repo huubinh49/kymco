@@ -1,5 +1,5 @@
 .banner{
-    background-image: url("./../../../img/img_product_detail/bg_banner.jpg");
+    background-image: url("./../img/img_product_detail/bg_banner.jpg");
     position: relative;
     &__product{
         position: absolute;
@@ -164,6 +164,7 @@
                             height: 3px;
                             background-color: black;
                             position: relative;
+                            cursor: pointer;
                         }
                     }
                     &-body{

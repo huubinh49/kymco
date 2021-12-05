@@ -1,7 +1,7 @@
 .banner{
     &.--news{
         height: 480px;
-        background-image: url("./../../../img/img_news/banner.jpg");
+        background-image: url("./../img/img_news/banner.jpg");
     }
     &__text{
         @include mid();
